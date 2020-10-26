@@ -10,8 +10,8 @@ DURATION_FORMAT = "{original} [{duration}m]"
 def strike_text(before: str):
     after = ""
     for i in before:
-        after = STRIKE + i
-    after += STRIKE
+        after = after + STRIKE + i
+    after = after + STRIKE
     return after
 
 
