@@ -7,6 +7,10 @@ STRIKE = "\u0336"
 DURATION_FORMAT = "{original} [{duration}m]"
 
 
+def unstrike_text(before: str):
+    return before.replace(STRIKE, "")
+
+
 def strike_text(before: str):
     after = ""
     for i in before:
@@ -30,6 +34,17 @@ class Strikethrough:
             return
 
         new_title = strike_text(title)
+        logging.info("set {title} to {new_title}".format(title=title, new_title=new_title))
+        task.update(content=new_title)
+        self.doist.commit()
+
+    def unstrike(self, task):
+        title = task[TaskFields.Title]
+        if not already_annotated(title=title):
+            logging.info("skipping %s. not yet annotated" % title)
+            return
+
+        new_title = unstrike_text(title)
         logging.info("set {title} to {new_title}".format(title=title, new_title=new_title))
         task.update(content=new_title)
         self.doist.commit()

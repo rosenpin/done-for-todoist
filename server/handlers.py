@@ -9,9 +9,9 @@ from logic import logic
 from .consts import *
 
 
-def handle_user_task(db: DB, user_id, task_id):
+def handle_user_task(db: DB, user_id, task_id, checked: int):
     doist = TodoistAPIWrapper(token=db.get_user_by_user_id(user_id=user_id).token)
-    logic.Logic(doist=doist).run_specific_task(task_id=task_id)
+    logic.Logic(doist=doist).run_specific_task(task_id=task_id, checked=checked)
 
 
 def handle_web_hook(db):
@@ -19,11 +19,13 @@ def handle_web_hook(db):
 
     user_id = req[WEB_HOOK_USER_ID_FIELD]
     task_id = req[WEB_HOOK_TASK_DATA][WEB_HOOK_TASK_ID]
+    checked = req[WEB_HOOK_TASK_DATA][WEB_HOOK_CHECKED]
 
     threading.Thread(target=handle_user_task, kwargs={
         'db': db,
         'user_id': user_id,
-        'task_id': task_id
+        'task_id': task_id,
+        'checked': checked
     }).start()
 
 

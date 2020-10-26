@@ -40,6 +40,7 @@ OUTER_SERVER = "https://done.rosenpin.io"
 # Webhook related consts
 WEB_HOOK_TASK_ID = "id"
 WEB_HOOK_TASK_DATA = "event_data"
+WEB_HOOK_CHECKED = "checked"
 
 # Error Messages
 WEBHOOK_ERROR_MESSAGE = "Error in webhook for request:\n\n {request}:\n\n {error}"
