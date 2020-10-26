@@ -1,0 +1,13 @@
+stages:
+  - update-repo
+
+update-repo:
+  stage: update-repo
+  only:
+    - master
+  script:
+    - whoami
+    - pwd
+    - cd /home/ubuntu/done-for-todoist
+    - git pull origin master
+    - sudo systemctl restart done-todoist.service
