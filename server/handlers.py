@@ -21,6 +21,12 @@ def handle_web_hook(db):
     task_id = req[WEB_HOOK_TASK_DATA][WEB_HOOK_TASK_ID]
     checked = req[WEB_HOOK_TASK_DATA][WEB_HOOK_CHECKED]
 
+    try:
+        db.get_user_by_user_id(user_id=user_id)
+    except KeyError:
+        utils.log_error("User not found, skipping")
+        return
+
     threading.Thread(target=handle_user_task, kwargs={
         'db': db,
         'user_id': user_id,
