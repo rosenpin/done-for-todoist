@@ -16,6 +16,7 @@ def handle_user_task(db: DB, user_id, task_id):
 
 def handle_web_hook(db):
     req = request.json
+    print(req)
 
     user_id = req[WEB_HOOK_USER_ID_FIELD]
     task_id = req[WEB_HOOK_TASK_DATA][WEB_HOOK_TASK_ID]
