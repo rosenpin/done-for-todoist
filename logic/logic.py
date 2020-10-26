@@ -1,0 +1,22 @@
+import logging
+
+from todoist.models import Item
+from todoist_service.todoist_wrapper.todoist_wrapper import TodoistWrapper
+
+from logic.strikethrough import Strikethrough
+
+
+class Logic:
+    def __init__(self, doist: TodoistWrapper):
+        self.doist = doist
+        self.striker = Strikethrough(doist=doist)
+
+    def __handle_task(self, task: Item):
+        self.striker.strike(task=task)
+
+    def run_specific_task(self, task_id):
+        logging.info("running for specific task {task_id}".format(task_id=task_id))
+
+        task = self.doist.get_task_by_id(task_id)
+
+        self.__handle_task(task=task)
