@@ -1,6 +1,7 @@
 # Done For Todoist
 Automatically ~~strikethrough~~ Google Calendar events when their marked completed in Todoist
 
+![example](ART/example-todoist.png)
 ![example](ART/example.png)
 
 Original repo including piplines can be [found here](https://gitlab.com/rosenpin/done-for-todoist)  
