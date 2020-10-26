@@ -15,7 +15,7 @@ class Logic:
         if checked == 1:
             self.striker.strike(task=task)
         if checked == 0:
-            self.striker.strike(task=task)
+            self.striker.unstrike(task=task)
 
     def run_specific_task(self, task_id, checked):
         logging.info("running for specific task {task_id}".format(task_id=task_id))
