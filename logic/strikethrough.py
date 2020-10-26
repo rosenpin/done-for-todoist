@@ -4,7 +4,6 @@ from todoist_service.consts import TaskFields
 from todoist_service.todoist_wrapper.todoist_wrapper import TodoistWrapper
 
 STRIKE = "\u0336"
-DURATION_FORMAT = "{original} [{duration}m]"
 
 
 def unstrike_text(before: str):
