@@ -22,6 +22,19 @@
     flex: 1 0 auto;
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     </style>
 </head>
 <body>
@@ -31,19 +44,47 @@
             <a>Hello {{USER_ID}}</a>
             <ul id="nav-mobile" class="right">
                 <li>
-                    <a href="https://github.com/rosenpin/done-for-todoist"><i class="material-icons">code</i></a>
+                    <a target="_blank" href="https://github.com/rosenpin/done-for-todoist"><i class="material-icons">code</i></a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://github.com/rosenpin/done-for-todoist/blob/master/README.md"><i class="material-icons">help</i></a>
                 </li>
             </ul>
         </div>
     </nav>
 </header>
-<main class="content center">
+<main class="content row center">
     <p class="flow-text">Your done tasks will be renamed with a s̶t̶r̶i̶k̶e̶t̶h̶r̶o̶u̶g̶h̶</p>
-            <form action="/logout" method="get">
-            <button class="btn-large red waves-effect waves-light" type="submit">Log out and disable
-                <i class="red material-icons right">delete_forever</i>
-            </button>
-        </form>
+    <div class="card left-align">
+        <div class="card-content">
+            <span class="card-title">Setup</span>
+            <ul>
+                <li>
+                    <p>
+                        Step 1:<br>
+                        <a href="https://get.todoist.help/hc/en-us/articles/115003128085-Use-Google-Calendar-with-Todoist">
+                            Add Google Calendar integration to your Todoist account</a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Step 2:<br>
+                        <a href="https://todoist.com/prefs/integrations">
+                            In Google Calendar integration, choose "leave it on Google Calendar" in the When a task is
+                            completed</a>
+                    </p>
+                </li>
+            </ul>
+            <img style="width:40%;" src="calendar-option.png"/>
+        </div>
+    </div>
+
+    <br><br>
+    <form action="/logout" method="get">
+        <button class="btn-large red waves-effect waves-light" type="submit">Log out and disable
+            <i class="red material-icons right">delete_forever</i>
+        </button>
+    </form>
 </main>
 
 <footer class="page-footer white">

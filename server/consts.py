@@ -14,6 +14,7 @@ HTML_CURRENT_MODE_PH = '{{CURRENT_MODE}}'
 SETTINGS_PAGE = pathlib.Path(__file__).parent.parent / "resources/settings.html"
 HOME_PAGE = pathlib.Path(__file__).parent.parent / "resources/index.html"
 FAVICON = pathlib.Path(__file__).parent.parent / "resources/favicon.png"
+CALENDAR_OPTION_IMG = pathlib.Path(__file__).parent.parent / "resources/calendar-option.png"
 
 # URLS
 SERVER_REDIRECT_URL = "https://done.rosenpin.io/redirect"

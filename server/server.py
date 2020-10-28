@@ -1,13 +1,13 @@
 import getpass
 import os
 
-import utils
-from consts import credentials
 from flask import Flask, redirect, request, make_response, send_file
 from oauthlib.oauth2 import WebApplicationClient
 from todoist_service.db import DB
 from todoist_service.server.authorization.authorization import AuthorizationHandler
 
+import utils
+from consts import credentials
 from . import consts
 from .consts import *
 from .handlers import handle_web_hook, handle_settings, handle_logout
@@ -95,6 +95,11 @@ def redirect_url():
 @app.route("/favicon.png")
 def favicon():
     return send_file(FAVICON)
+
+
+@app.route("/calendar-option.png")
+def favicon():
+    return send_file(CALENDAR_OPTION_IMG)
 
 
 def run_server():
