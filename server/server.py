@@ -32,7 +32,7 @@ def index():
     try:
         user_id = request.cookies.get(COOKIE_USERID)
         if user_id:
-            return redirect("settings")
+            return redirect(SETTINGS_PAGE_LOCATION)
 
         with open(HOME_PAGE, 'r') as file:
             data = file.read()
