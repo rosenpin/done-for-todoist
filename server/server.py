@@ -98,7 +98,7 @@ def favicon():
 
 
 @app.route("/calendar-option.png")
-def favicon():
+def calendar_option():
     return send_file(CALENDAR_OPTION_IMG)
 
 
