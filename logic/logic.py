@@ -3,13 +3,13 @@ import logging
 from todoist.models import Item
 from todoist_service.todoist_wrapper.todoist_wrapper import TodoistWrapper
 
-from logic.strikethrough import Strikethrough
+from logic.deftime import TimeSetter
 
 
 class Logic:
     def __init__(self, doist: TodoistWrapper):
         self.doist = doist
-        self.striker = Strikethrough(doist=doist)
+        self.striker = TimeSetter(doist=doist)
 
     def __handle_task(self, task: Item, checked: int):
         if checked == 1:

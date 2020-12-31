@@ -8,6 +8,6 @@ update-repo:
   script:
     - whoami
     - pwd
-    - cd /home/ubuntu/done-for-todoist
+    - cd /home/ubuntu/deftime-for-todoist
     - git pull origin master
-    - sudo systemctl restart done-todoist.service
+    - sudo systemctl restart deftime-todoist.service
