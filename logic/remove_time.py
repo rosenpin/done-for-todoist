@@ -8,7 +8,7 @@ class RemoveTime:
     def __init__(self, doist: TodoistWrapper):
         self.doist = doist
 
-    def remove_time(self, task:Task):
+    def remove_time(self, task: Task):
         title = task.content
         task_date = task.due
         if task_date is None:
@@ -24,8 +24,7 @@ class RemoveTime:
         logging.info(
             "set {title} to {task_time}".format(title=title, task_time=new_task_time)
         )
-        self.doist.update_task(task.id,due={"datetime": new_task_time})
-        self.doist.commit()
+        self.doist.update_task(task.id, due_datetime=new_task_time)
 
 
 def has_time(task_time: str):
