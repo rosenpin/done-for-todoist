@@ -1,6 +1,6 @@
 import logging
 
-from todoist.models import Item
+from todoist_api_python.models import Task
 from todoist_service.todoist_wrapper.todoist_wrapper import TodoistWrapper
 
 from logic.strikethrough import Strikethrough
@@ -13,7 +13,7 @@ class Logic:
         self.striker = Strikethrough(doist=doist)
         self.time_remover = RemoveTime(doist=doist)
 
-    def __handle_task(self, task: Item, checked: int):
+    def __handle_task(self, task: Task, checked: int):
         if checked == 1:
             self.striker.strike(task=task)
             self.time_remover.remove_time(task=task)
