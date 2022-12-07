@@ -35,7 +35,6 @@ class Strikethrough:
         new_title = strike_text(title)
         logging.info("set {title} to {new_title}".format(title=title, new_title=new_title))
         self.doist.update_task(task.id, content=new_title)
-        self.doist.commit()
 
     def unstrike(self, task: Task):
         title = task.content
@@ -46,4 +45,3 @@ class Strikethrough:
         new_title = unstrike_text(title)
         logging.info("set {title} to {new_title}".format(title=title, new_title=new_title))
         self.doist.update_task(task.id, content=new_title)
-        self.doist.commit()
