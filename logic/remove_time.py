@@ -11,7 +11,7 @@ class RemoveTime:
     def remove_time(self, task: Task):
         title = task.content
         task_date = task.due
-        if task_date is None:
+        if task_date is None or task_date.datetime is None:
             logging.info("skipping %s. doesn't have due date" % task_date)
             return
 
