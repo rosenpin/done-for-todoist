@@ -1,3 +1,8 @@
+# Deprecated in favor of:
+[Todoist Plugins](https://github.com/rosenpin/todoist-plugins)
+
+
+
 # Done For Todoist
 Automatically ~~strikethrough~~ Google Calendar events when they're marked completed in Todoist
 
